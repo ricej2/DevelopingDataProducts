@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Urban Population Growth</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Urban Population Growth">
+  <meta name="author" content="Justin Rice">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Urban Population Growth</h1>
+    <h2>Project presentation</h2>
+    <p>Justin Rice<br/>System Developer</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Introduction</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This presentation is being used used as a part of my analysis of World Bank&#39;s Climate Change Data. The analysis is a rather simple one. It allows the user to use sliders to filter the data.
+The app can be found here:</p>
+
+<p><a href="https://ricej2.shinyapps.io/UrbanGrowth/">https://ricej2.shinyapps.io/UrbanGrowth/</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>App Layout</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The app has a tabular panel which has 2 sub panels. The first sub panel is simply the data as a table. The second panel shows the summary of the Urban Growth according to the current filters.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Data Sample</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Here is a sample of what the data looks like:</p>
+
+<pre><code class="r">growthData &lt;- read.csv(&quot;../ClimateIndicators.csv&quot;)
+str(growthData[,2:9])
+</code></pre>
+
+<pre><code>## &#39;data.frame&#39;:    238 obs. of  8 variables:
+##  $ Country.Name                           : Factor w/ 238 levels &quot;Afghanistan&quot;,..: 1 2 3 4 5 6 7 8 9 10 ...
+##  $ Access.to.electricity....of.population.: num  41 100 99.3 55.8 100 ...
+##  $ Agricultural.land....of.land.area.     : num  58.1 43.8 17.4 24.5 42.8 ...
+##  $ Forest.area....of.land.area.           : num  2.068 28.321 0.805 90 34.043 ...
+##  $ Population.growth..annual...           : num  2.737 -0.496 1.776 -1.055 -1.242 ...
+##  $ Urban.population....of.total.          : num  24.7 52.2 67.5 87.6 87.8 ...
+##  $ Urban.population.growth..annual...     : num  4.27 1.61 2.82 -1.17 -1.85 ...
+##  $ Urban.Growth                           : logi  TRUE TRUE TRUE FALSE FALSE TRUE ...
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Frequencies</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Here we can see that the data is pretty skewed.</p>
+
+<pre><code class="r">table(growthData[,9])
+</code></pre>
+
+<pre><code>## 
+## FALSE  TRUE 
+##    27   211
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Introduction'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='App Layout'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Data Sample'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Frequencies'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>

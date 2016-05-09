@@ -1,0 +1,44 @@
+---
+title       : Urban Population Growth
+subtitle    : Project presentation
+author      : Justin Rice
+job         : System Developer
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Introduction
+
+This presentation is being used used as a part of my analysis of World Bank's Climate Change Data. The analysis is a rather simple one. It allows the user to use sliders to filter the data.
+The app can be found here:
+
+https://ricej2.shinyapps.io/UrbanGrowth/
+
+--- .class #id 
+
+## App Layout
+The app has a tabular panel which has 2 sub panels. The first sub panel is simply the data as a table. The second panel shows the summary of the Urban Growth according to the current filters.
+
+---
+
+## Data Sample
+
+Here is a sample of what the data looks like:
+```{r}
+growthData <- read.csv("../ClimateIndicators.csv")
+str(growthData[,2:9])
+```
+
+
+---
+
+## Frequencies
+
+Here we can see that the data is pretty skewed.
+```{r}
+table(growthData[,9])
+```
